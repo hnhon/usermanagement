@@ -40,6 +40,7 @@ function insertNewRecord(data) {
     .getElementsByTagName("tbody");
   const table = tbody[0];
   const row = table.insertRow(-1);
+  row.classList.add('row');
   const cell1 = row.insertCell(0);
   const cell2 = row.insertCell(1);
   const cell3 = row.insertCell(2);
