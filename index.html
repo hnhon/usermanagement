@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="item">
+            User Management System
+        </div>
+    </header>
+    <div class="main">
+        <form class="form" id="form">
+            <div class="back" id="form-back"><svg style="width: 20px;" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.333 4zM4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z" />
+                </svg>Back
+            </div>
+            <div class="label">Name</div>
+            <input class="input" id="name-input" type="text" name="name" required>
+            <div class="label">Email</div>
+            <input class="input" id="email-input" name="email" required></input>
+            <button type="submit" class="form-btn">Submit</button>
+        </form>
+
+
+        <div class="add-user-plus-table-container">
+            <div class="add-user">
+                <svg style="width: 50px;" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path
+                        d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
+                </svg>
+            </div>
+
+            <div class="user-table-container">
+                <table class="user-table" id="user-table">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Email Id</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>name</td>
+                            <td>email.com</td>
+                            <td><span class="act-btn edit-btn">Edit</span><span class="act-btn delete">Delete</span></td>
+                        </tr>
+                        <tr>
+                            <td>name2</td>
+                            <td>email.com2</td>
+                            <td><span class="act-btn edit-btn">Edit</span><span class="act-btn delete">Delete</span></td>
+                        </tr>
+                        <tr>
+                            <td>name3</td>
+                            <td>email.com3</td>
+                            <td><span class="act-btn edit-btn">Edit</span><span class="act-btn delete">Delete</span></td>
+                        </tr>
+                        <tr>
+                            <td>name4</td>
+                            <td>email.com4</td>
+                            <td><span class="act-btn edit-btn">Edit</span><span class="act-btn delete">Delete</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

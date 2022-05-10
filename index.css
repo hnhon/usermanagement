@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-color: white;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #009879;
+  padding: 1rem 0;
+  color: white;
+}
+
+.header .item {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.main {
+  position: relative;
+}
+
+.add-user-plus-table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.add-user {
+  border: 1px solid black;
+}
+
+.add-user:hover {
+  cursor: pointer;
+}
+
+.add-form-container.active {
+  display: block;
+}
+
+.form {
+    display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 400px;
+  background-color: white;
+  /* display: flex; */
+  flex-direction: column;
+  border: 1px solid black;
+  padding-top: 100px;
+}
+
+.form.active {
+    display: flex;
+}
+
+.form > * {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form .back {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    width: fit-content;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.form .label {
+  font-size: 2rem;
+}
+
+.form .input {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 20%);
+  border-radius: 5px;
+  min-height: 50px;
+  padding: 10px;
+  padding: 10px;
+  font-size: 2rem;
+}
+
+.form .form-btn {
+  margin-top: 10px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 20%);
+  border-radius: 5px;
+  min-height: 50px;
+  padding: 10px;
+  padding: 10px;
+  font-size: 2rem;
+  background-color: #009879;
+  color: white;
+  cursor: pointer;
+}
+
+.form .form-btn:hover {
+  background-color: rgba(0, 152, 121, 0.75);
+}
+
+.user-table {
+  width: 800px;
+  margin: 0 auto;
+
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.user-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 15px;
+}
+
+.user-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.user-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.user-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.user-table tbody .act-btn {
+  padding-right: 2rem;
+}
+
+.user-table tbody .act-btn:hover {
+  cursor: pointer;
+}
