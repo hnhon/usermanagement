@@ -1,28 +1,29 @@
 const openForm = document.querySelector(".add-user");
 const formBack = document.querySelector("#form-back");
 const form = document.querySelector("#form");
-const addUserForm = document.querySelector("#form");
-const editBtn = document.querySelectorAll(".edit-btn");
-
-editBtn.forEach((item) => {
-  item.addEventListener("click", () => {
-    console.log("edit");
-  });
-});
 
 openForm.addEventListener("click", () => {
+  form.setAttribute("data-type", "add");
   form.classList.toggle("active");
+  document.getElementById("form-btn").textContent = "Add";
 });
 
 formBack.addEventListener("click", () => {
   form.classList.toggle("active");
+  form.removeAttribute("data-type");
 });
 
-addUserForm.addEventListener("submit", (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   let formData = readFormData();
   form.classList.toggle("active");
-  insertNewRecord(formData);
+
+  if (form.getAttribute("data-type") === "add") {
+    insertNewRecord(formData);
+  } else if (form.getAttribute("data-type") === "edit") {
+    updateRecord(formData);
+  }
+
   resetForm();
 });
 
@@ -49,28 +50,41 @@ function insertNewRecord(data) {
     if (e.target.id === "edit") {
       onEdit(e.target);
     } else if (e.target.id === "delete") {
-      console.log("delete");
+      onDelete(e.target);
     }
   });
 }
 
+let selectedRow = null;
+
 function onEdit(target) {
   selectedRow = target.parentElement.parentElement;
-
   document.getElementById("name-input").value = selectedRow.cells[0].innerHTML;
   document.getElementById("email-input").value = selectedRow.cells[1].innerHTML;
   form.classList.toggle("active");
+  document.getElementById("form-btn").textContent = "Edit";
+  form.setAttribute("data-type", "edit");
 }
 
-function updateRecord(formData) {
-    selectedRow.cells[0].innerHTML = formData.productCode;
-    selectedRow.cells[1].innerHTML = formData.product;
-    selectedRow.cells[2].innerHTML = formData.qty;
-    selectedRow.cells[3].innerHTML = formData.perPrice;
+function onDelete(target) {
+  let row = target.parentElement.parentElement;
+  if (confirm("Do you want to delete this record?")) {
+    row.remove();
+    resetForm();
+  } else {
+    row = null;
+  }
+}
+
+function updateRecord(data) {
+  selectedRow.cells[0].innerHTML = data.name;
+  selectedRow.cells[1].innerHTML = data.email;
 }
 
 function resetForm() {
-  console.log("reset form");
+  form.removeAttribute("data-type");
+  selectedRow = null;
   document.getElementById("name-input").value = "";
   document.getElementById("email-input").value = "";
+  document.getElementById("form-btn").textContent = "Submit";
 }

@@ -34,10 +34,6 @@ body {
   margin-top: 40px;
 }
 
-.add-user {
-  border: 1px solid black;
-}
-
 .add-user:hover {
   cursor: pointer;
 }
@@ -53,7 +49,6 @@ body {
   width: 100%;
   min-height: 400px;
   background-color: white;
-  /* display: flex; */
   flex-direction: column;
   border: 1px solid black;
   padding-top: 100px;
