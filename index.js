@@ -46,6 +46,7 @@ function insertNewRecord(data) {
   const cell3 = row.insertCell(2);
   cell1.innerHTML = data.name;
   cell2.innerHTML = data.email;
+  cell3.classList.add ('action')
   cell3.innerHTML += `<span class="act-btn edit-btn" id='edit'>Edit</span><span class="act-btn delete-btn" id='delete'>Delete</span>`;
   cell3.addEventListener("click", (e) => {
     if (e.target.id === "edit") {

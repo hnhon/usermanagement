@@ -13,18 +13,17 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #009879;
-  padding: 1rem 0;
   color: white;
+}
+
+.main {
+  position: relative;
 }
 
 .header .item {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-}
-
-.main {
-  position: relative;
 }
 
 .add-user:hover {
@@ -36,7 +35,7 @@ body {
 }
 
 .form {
-    display: none;
+  display: none;
   position: absolute;
   top: 0;
   width: 100%;
@@ -48,22 +47,22 @@ body {
 }
 
 .form.active {
-    display: flex;
+  display: flex;
 }
 
 .form > * {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form .back {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    width: fit-content;
-    margin-bottom: 20px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  width: fit-content;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .form .label {
@@ -114,6 +113,16 @@ body {
   font-size: 1.1rem;
   font-family: sans-serif;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  table-layout: fixed;
+}
+
+.user-table td {
+  word-wrap: break-word;
+}
+
+.user-table td.action {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .user-table thead tr {
@@ -149,4 +158,10 @@ body {
 
 .user-table .row:hover {
   background-color: rgba(0, 152, 121, 0.75);
+}
+
+@media only screen and (max-width: 670px) {
+  .user-table td.action > * {
+    margin: 20px auto;
+  }
 }
