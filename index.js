@@ -1,8 +1,8 @@
-const openForm = document.querySelector(".add-user");
+const addUser = document.querySelector("#add-user");
 const formBack = document.querySelector("#form-back");
 const form = document.querySelector("#form");
 
-openForm.addEventListener("click", () => {
+addUser.addEventListener("click", () => {
   form.setAttribute("data-type", "add");
   form.classList.toggle("active");
   document.getElementById("form-btn").textContent = "Add";

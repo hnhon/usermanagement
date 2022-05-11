@@ -105,14 +105,22 @@ body {
   background-color: rgba(0, 152, 121, 0.75);
 }
 
-.user-table {
-  width: 800px;
+.table-container {
+  border: 1px solid black
+}
+
+.add-user {
   margin: 0 auto;
+}
+
+.user-table {
+
+  /* margin: 0 auto; */
 
   border-collapse: collapse;
   font-size: 0.9em;
   font-family: sans-serif;
-  min-width: 400px;
+  
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
