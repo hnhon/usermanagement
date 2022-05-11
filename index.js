@@ -5,12 +5,11 @@ let selectedRow = null;
 let isFormActive = false;
 
 addUser.addEventListener("click", () => {
-  if (isFormActive === false) {
-    form.setAttribute("data-type", "add");
-    form.classList.toggle("active");
-    document.getElementById("form-btn").textContent = "Add";
-    isFormActive = true;
-  } else return;
+  if (isFormActive === true) return;
+  form.setAttribute("data-type", "add");
+  form.classList.toggle("active");
+  document.getElementById("form-btn").textContent = "Add";
+  isFormActive = true;
 });
 
 formBack.addEventListener("click", () => {
@@ -64,19 +63,14 @@ function insertNewRecord(data) {
 }
 
 function onEdit(target) {
-  if (isFormActive === false) {
-    selectedRow = target.parentElement.parentElement;
-    document.getElementById("name-input").value =
-      selectedRow.cells[0].innerHTML;
-    document.getElementById("email-input").value =
-      selectedRow.cells[1].innerHTML;
-    form.classList.toggle("active");
-    document.getElementById("form-btn").textContent = "Edit";
-    form.setAttribute("data-type", "edit");
-    isFormActive === true
-  } else {
-    return
-  }
+  if (isFormActive === true) return;
+  selectedRow = target.parentElement.parentElement;
+  document.getElementById("name-input").value = selectedRow.cells[0].innerHTML;
+  document.getElementById("email-input").value = selectedRow.cells[1].innerHTML;
+  form.classList.toggle("active");
+  document.getElementById("form-btn").textContent = "Edit";
+  form.setAttribute("data-type", "edit");
+  isFormActive === true;
 }
 
 function onDelete(target) {
