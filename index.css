@@ -27,13 +27,6 @@ body {
   position: relative;
 }
 
-.add-user-plus-table-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-}
-
 .add-user:hover {
   cursor: pointer;
 }
@@ -106,21 +99,20 @@ body {
 }
 
 .table-container {
-  border: 1px solid black
+  width: 80%;
+  margin: 100px auto 0 auto;
 }
 
 .add-user {
-  margin: 0 auto;
+  display: block;
 }
 
 .user-table {
-
-  /* margin: 0 auto; */
-
+  margin: 0 auto;
+  width: 100%;
   border-collapse: collapse;
-  font-size: 0.9em;
+  font-size: 1.1rem;
   font-family: sans-serif;
-  
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
